@@ -3,3 +3,30 @@
 		extended = true
 		max_version = "0.122.0"
 		min_version = "0.122.0"
+
+
+[params.contact]
+	email = 'Override me!'
+	name = 'Override me!'
+	location = 'Override me!'
+	github = 'Override me!'
+	linkedin = 'Override me!'
+	dob = 'Override me!'
+
+[menu]
+	[[menu.main]]
+		name = 'Experience'
+		url = "/"
+		weight = 1
+	[[menu.main]]
+		name = 'Education'
+		url = '/'
+		weight = 2
+	[[menu.main]]
+		name = 'Skills'
+		url = "/"
+		weight = 3
+	[[menu.main]]
+		name = 'Projects'
+		url = "/"
+		weight = 5

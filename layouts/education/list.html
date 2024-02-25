@@ -1,0 +1,19 @@
+{{ define "main" }}
+<h1 class="section-heading"><span class="section-heading-accent-pink">Edu</span>cation</h1>
+	{{ range .Pages }}
+	<section class="section-element">
+		<div class="element-heading">
+			<h2>{{ .Title }}</h2> 
+			<p class="flex-space-between">
+			{{ .Params.From }} to {{ .Params.To }}
+			<a class="plain" href="{{ .Params.Place }}">
+				{{ .Params.Place_name }}
+				<i class="fa-solid fa-square-up-right"></i>
+			</a>
+			</p>
+		</div>
+		{{ .Content }}
+	</section>
+	{{ end }}
+
+{{ end }}

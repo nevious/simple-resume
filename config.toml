@@ -1,0 +1,5 @@
+[module]
+	[module.hugoVersion]
+		extended = true
+		max_version = "0.122.0"
+		min_version = "0.122.0"

@@ -1,0 +1,19 @@
+<div class="cover-image">
+	<a href="/">
+	<img src="{{ .Site.Params.Contact.Image }}" />
+	</a>
+</div>
+
+<div class="header">
+<div class="header-accent"></div>
+<div class="nav">
+	{{ range .Site.Menus.main }}
+		<div class="button">
+			<a class="nav-link" href="{{ .URL }}">
+				{{ $text := print .Name | safeHTML }}
+				{{ $text }}
+			</a>
+		</div>
+	{{ end }}
+</div>
+</div>

@@ -1,0 +1,12 @@
+{{ define "main" }}
+<h1 class="section-heading"><span class="section-heading-accent-green">Ski</span>lls</h1>
+	{{ range .Pages }}
+	<section class="section-element">
+		<div class="element-heading bottom-padding">
+			<h2>{{ .Title }}</h2> 
+		</div>
+		{{ .Content }}
+	</section>
+	{{ end }}
+
+{{ end }}

@@ -1,0 +1,33 @@
+<ul class="contact">
+	<ol><i class="fa-solid fa-id-badge" title="Name"></i>
+		{{ .Site.Params.Contact.Name }}
+	</ol>
+	<ol><i class="fa-solid fa-location-dot" title="Address"></i>
+		{{ .Site.Params.Contact.Location }}
+	</ol>
+	<ol><i class="fa-brands fa-github" title="Github"></i>
+		<a href="{{ .Site.Params.Contact.Github }}">
+		{{ .Site.Params.Contact.Github }}
+		</a>
+	</ol>
+	<ol>
+		<i class="fa-brands fa-linkedin" title="LinkedIn"></i>
+		<a href="{{ .Site.Params.Contact.Linkedin }}">
+			LinkedIn
+		</a>
+	</ol>
+	<ol>
+		<i class="fa-solid fa-cake-candles" title="Date of Birth"></i>
+		{{ .Site.Params.Contact.Dob }}
+	</ol>
+	<ol><i class="fa-sharp fa-solid fa-at" title="Email"></i>{{.Site.Params.Contact.Email | safeHTML }}</ol>
+</ul>
+
+<div class="flex-space-even margin-top margin-auto">
+<div class="toggle-switch">
+	<label>
+		<input id="light-toggle" class="invisible" type="checkbox"></input>
+		<span class="slider"></span>
+	</label>
+</div>
+</div>

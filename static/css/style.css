@@ -1,0 +1,389 @@
+
+/*
+ * I'm stealing as much as i can from Kewin Powell and others...
+ * https://github.com/kevin-powell/results-summary-component-main/blob/master/style.css
+ *
+ * Sadly, i'm not in love with css yet...
+ *
+ */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+[data-theme="dark"] {
+	--clr-background-neutral: hsl(209, 20%, 15%);
+	--clr-background-ligher: hsl(209, 20%, 20%);
+	--clr-neutral-default: hsl(203, 100%, 95%);
+	--main-color: hsl(192, 100%, 60%);
+	--accent-color2: hsl(327, 100%, 50%);
+	--accent-color3: hsl(285, 100%, 60%);
+	--accent-color4: hsl(180, 100%, 70%);
+	--accent-color5: hsl(210, 100%, 60%);
+}
+
+[data-theme="light"] {
+	--clr-background-neutral: hsl(210, 20%, 100%);
+	--clr-background-ligher: hsl(0, 0%, 95%);
+	--clr-neutral-default: hsl(200, 70%, 25%);
+	--main-color: hsl(192, 100%, 30%);
+	--accent-color2: hsl(327, 65%, 50%);
+	--accent-color3: hsl(285, 65%, 60%);
+	--accent-color4: hsl(180, 65%, 70%);
+	--accent-color5: hsl(210, 65%, 60%);
+}
+
+:root {
+	--font-family-default: 'Roboto Mono';
+
+	--fw-regular: 500;
+	--fw-bold: 700;
+	--fw-black: 800;
+
+	--fs-100: 0.5rem;
+	--fs-200: 0.75rem;
+	--fs-200: 0.85rem;
+	--fs-300: 1rem;
+	--fs-400: 1.125rem;
+	--fs-500: 1.25rem;
+	--fs-600: 1.5rem;
+	--fs-700: 1.75rem;
+	--fs-800: 2rem;
+	--fs-900: 5rem;
+}
+
+/* Reset */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	font: inherit;
+}
+
+html {
+	min-height: 100%;
+	color-scheme: light dark;
+}
+
+img,
+svg {
+	max-width: 100%;
+	display: block,
+}
+
+/* Base Styles */
+
+body {
+	font-family: 'Roboto Mono', monospace;
+	font-size: var(--fs-300);
+	color: var(--clr-neutral-default);
+	margin-top: 2rem;
+	background-color: var(--clr-background-neutral);
+	min-height: 100%;
+}
+
+ul li {
+	list-style: '> ';
+}
+
+i {
+	color: var(--main-color);
+}
+
+blockquote > p {
+	margin-left: 1rem;
+	font-style: italic;
+}
+
+/* Utility classes */
+
+.section-element {
+	padding: 2rem 0 2rem 0;
+}
+
+.section-element ul {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+.element-heading {
+	margin-bottom: 1rem;
+	border-bottom: 1px solid var(--main-color);
+}
+
+.element-heading p {
+	font-size: var(--fs-200);
+}
+
+.element-heading h2 {
+	font-size: var(--fs-500);
+	font-weight: var(--fw-bold);
+}
+
+.bg-color {
+	background-color: var(--main-color);
+}
+
+.center-elements {
+	align-self: center;
+	justify-self: center;
+}
+
+.plain {
+	text-decoration: none;
+	color: var(--clr-neutral-default);
+}
+
+.flex-space-between {
+	display: flex;
+	justify-content: space-between;
+}
+
+.flex-space-even {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.margin-top {
+	margin-top: 2rem;
+}
+
+.container {
+	display: grid;
+	max-width: 2000px;
+	margin: auto;
+}
+
+@media (min-width: 950px) {
+	.container {
+		gap: 2rem;
+		grid-template-columns: 0.75fr 2fr;
+	}
+}
+
+.main {
+	max-width: 1200px;
+	min-height: calc(100vh - 28.5rem);
+	padding: 1rem;
+}
+
+.main p {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+.bottom-padding {
+	padding-bottom: 1rem;
+}
+
+.margin-auto {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.invisible {
+	display: none;
+}
+
+.neon-border {
+	border: 1px solid lime;
+}
+
+
+/* Component classes */
+
+.cover-image {
+	max-width: 20rem;
+	max-height: 20rem;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 2px solid var(--main-color);
+	margin: auto;
+}
+
+.nav {
+	display: flex;
+	padding: 1rem;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: space-evenly;
+	height: 100%;
+	background-color: var(--clr-background-ligher);
+}
+
+.nav a {
+	text-decoration: none;
+	font-size: var(--fs-500);
+	font-weight: var(--fw-bold);
+	color: var(--clr-neutral-default);
+}
+
+.header {
+	max-width: 1200px;
+}
+
+.header-accent {
+	height: 1rem;
+	background: linear-gradient(
+		120deg,
+		var(--accent-color2) 0%,
+		var(--accent-color3) 30%,
+		var(--accent-color4) 60%,
+		var(--accent-color5) 90%
+	);
+}
+
+.contact {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-top: 2rem;
+	gap: 1rem;
+	text-decoration: none;
+	font-size: var(--fs-300);
+}
+
+.contact ol {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+	justify-content: start;
+}
+
+.contact i {
+	padding-right: 1rem;
+	min-width: 2rem;
+}
+
+.contact a {
+	color: inherit;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.section-heading{
+	font-size: var(--fs-700);
+	font-weight: var(--fw-bold);
+}
+
+.section-heading-accent-pink {
+	color: var(--accent-color2);
+}
+
+.section-heading-accent-purple {
+	color: var(--accent-color3);
+}
+
+.section-heading-accent-blue {
+	color: var(--accent-color4);
+}
+
+.section-heading-accent-green {
+	color: var(--accent-color5);
+}
+
+@media (max-width: 950px) {
+	.sidebar {
+		padding-bottom: 1rem;
+		margin: auto;
+	}
+
+	.contact ol{
+		font-size: var(--fs-200);
+		gap: 0;
+	}
+
+	.container {
+		/* this seems wrong here.. */
+		gap: 1rem;
+	}
+
+	.nav {
+		flex-direction: column;
+	}
+
+}
+
+.button {
+	padding: 1rem;
+	border-bottom: 0px solid var(--clr-background-neutral);
+}
+
+.button:hover,
+.button:focus {
+	border-bottom: 1px solid var(--main-color);
+	transition: all linear 0.2s;
+}
+
+.section-element table {
+	width: 100%;
+}
+
+.section-element tr {
+	padding-top: 1rem;
+}
+
+.section-element h3 {
+	font-weight: var(--fw-bold);
+}
+
+.toggle-switch {
+	position: relative;
+	width: 4rem;
+}
+
+
+.toggle-switch label {
+  position: absolute;
+  width: 100%;
+  height: 2rem;
+  background-color: var(--clr-background-ligher);
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.slider {
+	position: absolute;
+	width: 1.5rem;
+	height: 1.5rem;
+	border-radius: 50px;
+	background-color: var(--clr-neutral-default);
+	top: 0.25rem;
+	left: 0.25rem;
+}
+
+.slider::before {
+	content: "";
+	position: absolute;
+	left: 0.6rem;
+	width: 1.5rem;
+	height: 1.5rem;
+	border-radius: 50%;
+	box-shadow: inset 28px 0px 0px 0px var(--clr-background-ligher);
+	background-color: var(--clr-background-neutral);
+	transition: 0.3s;
+}
+
+.toggle-switch input:checked ~ .slider {
+	background-color: var(--clr-background-ligher)
+}
+
+.toggle-switch input:checked ~ .slider::before {
+	transform: translateX(1.4rem);
+	background-color: var(--clr-background-neutral);
+	box-shadow: none;
+}
+
+footer {
+	background-color: var(--clr-background-ligher);
+	color: var(--clr-neutral-default);
+	display: flex;
+	width: 100%;
+	padding: 0.75rem;
+	justify-content: space-between;
+	font-size: var(--fs-200);
+	height: 4.5rem;
+	align-items: center;
+}

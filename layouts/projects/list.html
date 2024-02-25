@@ -1,0 +1,23 @@
+{{ define "main" }}
+<h1 class="section-heading"><span class="section-heading-accent-blue">Pro</span>jects</h1>
+	{{ range ( .Pages.ByParam "Year" ).Reverse }}
+	<section class="section-element">
+		<div class="element-heading">
+			<h2>{{ .Title }}</h2> 
+			<p class="flex-space-between">
+
+			{{/* Year property can be either time.Time type or int */}}
+
+			{{ $type := printf "%T" .Params.Year }}
+			{{ if eq $type "int" }}
+				{{ .Params.Year }}
+			{{ else }}
+				{{ time.Format "2006" .Params.Year }} 
+			{{ end }}
+			</p>
+		</div>
+		{{ .Content }}
+	</section>
+	{{ end }}
+
+{{ end }}
